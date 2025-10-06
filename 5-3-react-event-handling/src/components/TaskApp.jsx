@@ -3,7 +3,12 @@ import TaskList from "./TaskList";
 
 export default function TaskApp() {
    const [text, setText] = useState("");
+   const [tasks, setTasks] = useState([]);
   const handleSubmit = () => {
+    const x=text.trim();
+    if(!x) return;
+    setTasks(prev => [...prev, { id: Date.now(), text }]);
+    setText("")
    
   };
 
