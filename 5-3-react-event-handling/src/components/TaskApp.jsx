@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import TaskList from "./TaskList";
 
 export default function TaskApp() {
-  
+   const [text, setText] = useState("");
   const handleSubmit = () => {
    
   };
@@ -10,6 +10,8 @@ export default function TaskApp() {
   
   const handleDelete = (id) => {
     // TODO: filter tasks by id to remove the clicked one
+    
+
   };
 
   
@@ -27,6 +29,8 @@ export default function TaskApp() {
           className="input"
           // TODO: value={text}
           // TODO: onChange={(e) => setText(e.target.value)}
+          value={text}
+          onChange={(e) => setText(e.target.value)}
           onKeyDown={(e) => {
             if (e.key === "Enter") handleSubmit();
           }}
@@ -46,6 +50,8 @@ export default function TaskApp() {
           Clear All
         </button>
       </div>
+      <p>{text}</p>  
+
     </section>
   );
 }
